@@ -29,6 +29,8 @@
     suppressScrollY: false,
     scrollXMarginOffset: 0,
     scrollYMarginOffset: 0,
+    scrollYMargin: 0,
+    scrollXMargin: 0,
     includePadding: false
   };
 
@@ -184,8 +186,8 @@
         }
         $scrollbarYRail.css(scrollbarYStyles);
 
-        $scrollbarX.css({left: scrollbarXLeft, width: scrollbarXWidth - railBorderXWidth});
-        $scrollbarY.css({top: scrollbarYTop, height: scrollbarYHeight - railBorderYWidth});
+        $scrollbarX.css({left: scrollbarXLeft + settings.scrollXMargin, width: scrollbarXWidth - railBorderXWidth - settings.scrollXMargin*2});
+        $scrollbarY.css({top: scrollbarYTop + settings.scrollYMargin, height: scrollbarYHeight - railBorderYWidth - settings.scrollYMargin*2});
 
         if (scrollbarXActive) {
           $this.addClass('ps-active-x');
